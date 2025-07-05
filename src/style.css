@@ -29,7 +29,7 @@ h2 {
   background: #f0f0f0;
   color: grey;
 }
-#country {
+#countries {
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
