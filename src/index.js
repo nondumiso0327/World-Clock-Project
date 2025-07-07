@@ -1,19 +1,17 @@
 //south africa
-function updateSaClock() {
+function updateTime() {
   let saElement = document.querySelector("#south-africa");
   if (saElement) {
     let saDateElement = saElement.querySelector(".date");
     let saTimeElement = saElement.querySelector(".time");
     let saTime = moment().tz("Africa/Johannesburg");
     saDateElement.innerHTML = saTime.format("MMMM Do YYYY");
-    saTimeElement.innerHTML = `${saTime.format("h:mm:ss  [<small>]A[</small>]")}`;
+    saTimeElement.innerHTML = `${saTime.format(
+      "h:mm:ss  [<small>]A[</small>]"
+    )}`;
   }
-}
-  updateSaClock();
-  setInterval(updateSaClock, 1000);
 
-//Tokyo
-function updateTokyoClock() {
+  //Tokyo
   let tokyoElement = document.querySelector("#tokyo");
   if (tokyoElement) {
     let tokyoDateElement = tokyoElement.querySelector(".date");
@@ -29,22 +27,21 @@ function updateCity(event) {
   let cityTimeZone = event.target.value;
   let cityTime = moment().tz(cityTimeZone);
   let countriesElement = document.querySelector("#countries");
-  
+
   countriesElement.innerHTML = `
     <div class="country">
       <div>
-        <h2>${cityTimeZone.replace("_"," ").split("/")[1]}</h2>
+        <h2>${cityTimeZone.replace("_", " ").split("/")[1]}</h2>
         <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
-        <div class="time">${cityTime.format("h:mm:ss  [<small>]A[</small>]")}</div>
+        <div class="time">${cityTime.format(
+          "h:mm:ss  [<small>]A[</small>]"
+        )}</div>
       </div>
     </div>`;
-
 }
 
-
-updateTokyoClock();
-setInterval(updateTokyoClock, 1000);
-
+updateTime();
+setInterval(updateTime, 1000);
 
 let countriesSelectElement = document.querySelector("#select");
 countriesSelectElement.addEventListener("change", updateCity);
