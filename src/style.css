@@ -8,10 +8,19 @@ h1 {
   font-family: sans-serif;
   font-size: 36px;
 }
-.images{
-  width: 20%;
-
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000; /* ensures it’s on top of other elements */
 }
+
+.logo img {
+  width: 100px; /* Adjust size as needed */
+  height: auto;
+  border-radius: 12px; /* optional for rounded corners */
+}
+
 .container {
   max-width: 600px;
   margin: 60px auto;
